@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BACLAIN</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b6623">
+</head>
+<body>
+<div id="app">
+  <h1>BACLAIN</h1>
+
+  <!-- Setup Screen -->
+  <div id="setupScreen">
+    <label>Number of players (2–6):</label>
+    <input type="number" id="numPlayers" min="2" max="6">
+    <button id="startBtn">Start Game</button>
+  </div>
+
+  <!-- Player Names Screen -->
+  <div id="playerNamesScreen" style="display:none;">
+    <h2>Enter Player Names</h2>
+    <div id="playerInputs"></div>
+    <button id="confirmPlayers">Confirm Players</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="gameScreen" style="display:none;">
+    <h2 id="roundDisplay">ROUND 1</h2>
+    <div id="positionDisplay" class="positionDisplay"></div>
+    <div id="playersArea" class="grid"></div>
+    <button id="shuffleBtn">Shuffle Initial Squad</button>
+    <button id="nextRoundBtn" style="display:none;">Next Round</button>
+    <button id="openMarketBtn">Open Market</button>
+  </div>
+</div>
+<script src="game.js"></script>
+<script>
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('service-worker.js');
+  }
+</script>
+</body>
+      </html>
